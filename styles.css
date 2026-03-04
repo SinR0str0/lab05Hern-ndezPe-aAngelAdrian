@@ -2,6 +2,13 @@
    ESTILOS PARA CV - LABORATORIO GIT Y GITHUB
    ===================================================== */
 
+/* Variables */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --background-color: #f5f5f5;
+}
+
 /* Reset básico */
 * {
     margin: 0;
@@ -12,7 +19,7 @@
 /* Estilos del body */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: var(--background-color);
     color: #333;
     line-height: 1.6;
 }
@@ -33,19 +40,19 @@ body {
 .header {
     text-align: center;
     padding-bottom: 30px;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid --primary-color;
     margin-bottom: 30px;
 }
 
 .nombre {
     font-size: 2.5em;
-    color: #2c3e50;
+    color: var(--secondary-color);
     margin-bottom: 10px;
 }
 
 .titulo {
     font-size: 1.3em;
-    color: #3498db;
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
@@ -62,9 +69,9 @@ body {
 }
 
 .seccion h2 {
-    color: #2c3e50;
+    color:  var(--secondary-color);
     font-size: 1.5em;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid --primary-color;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
@@ -124,7 +131,7 @@ body {
 }
 
 .skill {
-    background-color: #3498db;
+    background-color: var(--primary-color);
     color: white;
     padding: 8px 15px;
     border-radius: 20px;
@@ -142,16 +149,3 @@ body {
     font-size: 0.85em;
     margin-top: 30px;
 }
-
-/* =====================================================
-   PERSONALIZACIÓN - MODIFICA ESTOS COLORES!
-   ===================================================== */
-/* 
-   EJERCICIO: Cambia estos colores por los que prefieras
-   
-   Color principal: #3498db (azul)
-   Color de títulos: #2c3e50 (azul oscuro)
-   Color de fondo: #f5f5f5 (gris claro)
-   
-   Puedes buscar colores en: https://htmlcolorcodes.com/
-*/
