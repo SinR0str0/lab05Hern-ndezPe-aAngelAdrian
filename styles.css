@@ -21,6 +21,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Estilos del body */
 body {
     font-family: "Montserrat", sans-serif;
@@ -113,7 +117,7 @@ body {
 /* =====================================================
    SECCIONES
    ===================================================== */
-cv-seccion {
+.cv-seccion {
     background: var(--color-bg-secondary);
     padding: 22px;
     border-radius: var(--radius);
@@ -349,6 +353,150 @@ cv-seccion {
         flex-direction: column;
         gap: 8px;
     }
+}
+
+/* Animaciones */
+.cv-seccion,
+.project-card,
+.timeline-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.cv-seccion:nth-child(1) { animation-delay: 0.1s; }
+.cv-seccion:nth-child(2) { animation-delay: 0.2s; }
+.cv-seccion:nth-child(3) { animation-delay: 0.3s; }
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s; }
+.timeline-item:nth-child(5) { animation-delay: 0.5s; }
+
+.skill-fill {
+    height: 100%;
+    width: 0; 
+    background: linear-gradient(90deg, var(--color-accent), #06b6d4);
+    border-radius: 3px;
+    animation: fillProgress 1.2s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fillProgress {
+    to {
+        width: var(--progress);
+    }
+}
+
+.project-card:hover,
+.cv-seccion:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(2, 132, 199, 0.15);
+    border-color: var(--color-accent);
+    transition: all 0.3s ease;
+}
+
+.timeline-body:hover {
+    background: linear-gradient(135deg, white, #f0f9ff);
+    border-left-color: #06b6d4;
+    border-left-width: 3px;
+    transform: translateX(4px);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-marker {
+    background: #06b6d4;
+    transform: scale(1.3);
+    box-shadow: 0 0 12px rgba(2, 132, 199, 0.6);
+    transition: all 0.3s ease;
+}
+
+.btn-github {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-github::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-github:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-github:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
+}
+
+/* Links de contacto */
+.link-contacto {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.link-contacto::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.link-contacto:hover::after {
+    width: 100%;
+}
+
+.timeline-marker {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 0.8;
+    }
+}
+
+.project-stack code {
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.project-stack code:hover {
+    background: var(--color-accent);
+    color: white;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 8px rgba(2, 132, 199, 0.3);
 }
 
 /* ===== UTILIDADES ===== */
