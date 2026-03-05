@@ -506,3 +506,57 @@ body {
 .mt-2 { margin-top: 16px; }
 .mb-1 { margin-bottom: 8px; }
 .mb-2 { margin-bottom: 16px; }
+
+/* Impresion */
+@media print {
+    @page {
+        margin: 2cm 1.5cm;
+        size: auto;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 11pt;
+    }
+    
+    .container {
+        max-width: 90% !important;
+        padding: 10px !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+    
+    /* Ocultar botones y enlaces interactivos */
+    .btn-github,
+    .btn-descargar,
+    .link-contacto[href^="tel:"],
+    .link-contacto[href^="mailto:"] {
+        display: none !important;
+    }
+    
+    /* Ajustar grid a una columna para impresión */
+    .grid-principal {
+        display: block !important;
+    }
+    
+    .cv-column--left,
+    .cv-column--right {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    /* Evitar cortes de página en secciones */
+    .cv-seccion,
+    .project-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    /* Ajustar colores para impresión en blanco y negro */
+    .skill-fill {
+        background: #000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
