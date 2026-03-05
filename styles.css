@@ -4,9 +4,9 @@
 
 /* Variables */
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2c3e50;
-    --background-color: #f5f5f5;
+    --primary-color: #db9834;
+    --secondary-color: #502c4a;
+    --background-color: #fff;
 }
 
 /* Reset básico */
@@ -46,7 +46,7 @@ body {
 
 .nombre {
     font-size: 2.5em;
-    color: var(--secondary-color);
+    color: #209b4f;
     margin-bottom: 10px;
 }
 
@@ -132,7 +132,7 @@ body {
 
 .skill {
     background-color: var(--primary-color);
-    color: white;
+    color: rgb(247, 2, 2);
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 0.9em;
