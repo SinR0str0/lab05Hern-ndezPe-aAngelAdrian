@@ -334,10 +334,6 @@ cv-seccion {
     .grid-principal {
         grid-template-columns: 1fr;
     }
-    
-    .cv-column--right {
-        order: -1; /* Habilidades y proyectos van primero en móvil */
-    }
 }
 
 @media (max-width: 600px) {
